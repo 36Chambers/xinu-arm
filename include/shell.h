@@ -17,7 +17,7 @@
 #define SHELL_CMDPRIO 20        /**< command process priority           */
 
 /* Message constants */
-#define SHELL_BANNER "\033[1;31m--------------------------------------\n      ____  ___.__                    \n      \\   \\/  /|__| ____  __ __       \n       \\     / |  |/    \\|  |  \\      \n       /     \\ |  |   |  \\  |  /      \n      /___/\\  \\|__|___|  /____/       \n            \\_/        \\/       v2.0  \n--------------------------------------\n\033[0;39m\n"
+#define SHELL_BANNER "\033[1;31m--------------------------------------\n                         ,##\n       ###              #####\n      ########j       #######\n      #########     #########G\n      #########     K#########\n     #########    ,  #########\n     #########  ;##  #########\n     #########G ###W #########\n     W#########;##############\n     # # f# tE :### ., ##   #i\n     G # #   #   #  fj #  tG\n      # #  # #   # #  ## ,it W\n     W##WWKWKEEGLt;:...\n     W############ .#########W\n      ############  #########\n      ############   ########\n       ###########   #######\n        ##########   #######\n         ##########  ,#####\n           ########f  ####\n              W####:  ###\n                      ##\n--------------------------------------\n\033[0;39m\n"
 #define SHELL_BANNER_NONVT100 "--------------------------------------\n      ____  ___.__                    \n      \\   \\/  /|__| ____  __ __       \n       \\     / |  |/    \\|  |  \\      \n       /     \\ |  |   |  \\  |  /      \n      /___/\\  \\|__|___|  /____/       \n            \\_/        \\/       v2.0  \n--------------------------------------\n\n"
 /** start message */
 #define SHELL_START     "Welcome to the wonderful world of Xinu!\n"
@@ -93,5 +93,9 @@ shellcmd xsh_user(int, char *[]);
 shellcmd xsh_vlanstat(int, char *[]);
 shellcmd xsh_voip(int, char *[]);
 shellcmd xsh_xweb(int, char *[]);
-
+shellcmd xsh_echo(int, char *[]);
+shellcmd xsh_printtos(int, char *[]);
+shellcmd xsh_printprocstks(int, char *[]);
+shellcmd xsh_ledoff(int, char *[]);
+shellcmd xsh_ledon(int, char *[]);
 #endif                          /* _SHELL_H_ */

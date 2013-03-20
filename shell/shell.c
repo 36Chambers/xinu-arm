@@ -17,6 +17,7 @@
 #include <thread.h>
 #include <nvram.h>
 #include <conf.h>
+#include <ledctrl.h>
 
 const struct centry commandtab[] = {
 #if NETHER
@@ -89,7 +90,11 @@ const struct centry commandtab[] = {
     {"voip", FALSE, xsh_voip},
     {"xweb", FALSE, xsh_xweb},
 #endif
-    {"?", FALSE, xsh_help}
+    {"printtos", FALSE, xsh_printtos},
+    {"printprocstks", FALSE, xsh_printprocstks},
+    {"ledoff", FALSE, xsh_ledoff},
+    {"ledon", FALSE, xsh_ledon},
+    {"?", FALSE, xsh_help},
 };
 
 const ulong ncommand = sizeof(commandtab) / sizeof(struct centry);
@@ -123,6 +128,9 @@ thread shell(int indescrp, int outdescrp, int errdescrp)
 
     /* Enable interrupts */
     enable();
+    
+    /* Configure GPIO*/
+    led_init();
 
     hostptr = NULL;
     devptr = NULL;
