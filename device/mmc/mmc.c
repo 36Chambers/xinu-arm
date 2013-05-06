@@ -38,4 +38,7 @@
 
 #include <sdhci.h>
 
-printf("This is a file test");
+void rand(){
+    printf("This is a file test");
+} 
+

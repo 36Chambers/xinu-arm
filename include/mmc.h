@@ -28,6 +28,8 @@
 
 #include <linux/list.h>
 #include <linux/compiler.h>
+#include<part.h>
+#include<config.h>
 
 #define SD_VERSION_SD	0x20000
 #define SD_VERSION_2	(SD_VERSION_SD | 0x20)
@@ -252,7 +254,7 @@ struct mmc {
 	uint read_bl_len;
 	uint write_bl_len;
 	uint erase_grp_size;
-	u64 capacity;
+	__u64 capacity;
 	block_dev_desc_t block_dev;
 	int (*send_cmd)(struct mmc *mmc,
 			struct mmc_cmd *cmd, struct mmc_data *data);
@@ -265,7 +267,7 @@ struct mmc {
 int mmc_register(struct mmc *mmc);
 int mmc_initialize(bd_t *bis);
 int mmc_init(struct mmc *mmc);
-int mmc_read(struct mmc *mmc, u64 src, uchar *dst, int size);
+int mmc_read(struct mmc *mmc, __u64 src, uchar *dst, int size);
 void mmc_set_clock(struct mmc *mmc, uint clock);
 struct mmc *find_mmc_device(int dev_num);
 int mmc_set_dev(int dev_num);
