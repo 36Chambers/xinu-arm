@@ -24,7 +24,7 @@
 #define _PART_H
 
 #include <ide.h>
-
+typedef unsigned char uchar;
 typedef struct block_dev_desc {
 	int		if_type;	/* type of the interface */
 	int		dev;		/* device number */
