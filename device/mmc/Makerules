@@ -4,7 +4,7 @@
 COMP = device/mmc
 
 # Source files for this component
-C_FILES = mmc.c
+C_FILES = mmc.c bcm2835_sdhci.c sdhci.c
 S_FILES =
 
 # Add the files to the compile source path
